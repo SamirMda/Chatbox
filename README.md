@@ -9,5 +9,6 @@ This project is an Android chatbox
 
 ## Guide
 ### Registration
+![gambatte](img/gambatte-teacher-jun-gambatte.gif)
 ### Connection
 ### Chat
