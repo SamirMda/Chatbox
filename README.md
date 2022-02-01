@@ -9,13 +9,13 @@ This project is an Android chatbox
 
 ## Guide
 ### Registration
-1. ![Connection](img/Connection.jpg)
-2. ![Registration](img/Registration.jpg)
+1. <img src="img/Connection.jpg" width="300">
+2. <img src="img/Registration.jpg" width="300">
 
 ### Connection
-1. ![Connection](img/Connection.jpg)
-2. ![Home_Page](img/Home_page.jpg)
+1. <img src="img/Connection.jpg" width="300">
+2. <img src="img/Home_page.jpg" width="300">
 
 ### Chat
-1. ![Home_Page](img/Home_page.jpg)
-2. ![Chat](img/Chat.jpg)
+1. <img src="img/Home_page.jpg" width="300">
+2. <img src="img/Chat.jpg" width="300">
