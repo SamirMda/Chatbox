@@ -38,4 +38,5 @@ class SignUp : AppCompatActivity() {
             signUpViewModel.signUp(name, email, password, this)
         }
     }
+
 }

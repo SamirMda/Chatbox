@@ -33,4 +33,5 @@ class SignUpViewModel {
         val mDbRef: DatabaseReference = FirebaseDatabase.getInstance().reference
         mDbRef.child("user").child(uid).setValue(User(name, email, uid))
     }
+
 }

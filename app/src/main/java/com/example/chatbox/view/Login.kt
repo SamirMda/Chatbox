@@ -42,4 +42,5 @@ class Login : AppCompatActivity() {
             loginViewModel.getConnection(email, password, this)
         }
     }
+
 }
