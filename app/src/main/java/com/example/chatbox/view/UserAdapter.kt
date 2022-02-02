@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatbox.R
-import com.example.chatbox.model.User
-import com.google.firebase.auth.FirebaseAuth
+import com.example.chatbox.database.User
 import java.util.ArrayList
 
 class UserAdapter(val context: Context, val userList: ArrayList<User>):

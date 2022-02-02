@@ -1,4 +1,4 @@
-package com.example.chatbox.model
+package com.example.chatbox.database
 
 class Message {
     var message: String? = null

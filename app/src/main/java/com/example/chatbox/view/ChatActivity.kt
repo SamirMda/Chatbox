@@ -1,15 +1,13 @@
 package com.example.chatbox.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatbox.R
-import com.example.chatbox.model.Message
+import com.example.chatbox.database.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -33,6 +31,7 @@ class ChatActivity : AppCompatActivity() {
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid
         mDbRef = FirebaseDatabase.getInstance().getReference()
 
+        // Get the Room id of the users
         senderRoom = receiverUid + senderUid
         receiverRoom = senderUid + receiverUid
 
