@@ -11,7 +11,7 @@ import com.example.chatbox.database.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class ChatActivity : AppCompatActivity() {
+class ChatActivityView : AppCompatActivity() {
     private lateinit var chatRecyclerView: RecyclerView
     private lateinit var messageBox: EditText
     private lateinit var sentButton: ImageView

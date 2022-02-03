@@ -7,39 +7,35 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.chatbox.R
-import com.example.chatbox.viewModel.LoginViewModel
+import com.example.chatbox.database.User
+import com.example.chatbox.viewModel.SignUpViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
-class Login : AppCompatActivity() {
+class SignUpView : AppCompatActivity() {
+    private lateinit var nameEdt: EditText
     private lateinit var emailEdt: EditText
     private lateinit var passwordEdt: EditText
-    private lateinit var loginBtn: Button
     private lateinit var signUpBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-        supportActionBar?.hide()
+        setContentView(R.layout.activity_sign_up)
 
-        // get view element
+        // get activity element
+        nameEdt = findViewById(R.id.nameEdt)
         emailEdt = findViewById(R.id.emailEdt)
         passwordEdt = findViewById(R.id.passwordEdt)
-        loginBtn = findViewById(R.id.loginButton)
         signUpBtn = findViewById(R.id.signupButton)
 
-        // redirect to the sign up page on click
         signUpBtn.setOnClickListener {
-            val intent = Intent(this, SignUp::class.java)
-            startActivity(intent)
-        }
-
-        // connect on click
-        loginBtn.setOnClickListener {
+            val name = nameEdt.text.toString()
             val email = emailEdt.text.toString()
             val password = passwordEdt.text.toString()
-            val loginViewModel = LoginViewModel()
+            val signUpViewModel = SignUpViewModel()
 
-            loginViewModel.getConnection(email, password, this)
+            signUpViewModel.signUp(name, email, password, this)
         }
     }
 

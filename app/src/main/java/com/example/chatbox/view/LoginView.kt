@@ -5,37 +5,39 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import com.example.chatbox.R
-import com.example.chatbox.database.User
-import com.example.chatbox.viewModel.SignUpViewModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.example.chatbox.viewModel.LoginViewModel
 
-class SignUp : AppCompatActivity() {
-    private lateinit var nameEdt: EditText
+class LoginView : AppCompatActivity() {
     private lateinit var emailEdt: EditText
     private lateinit var passwordEdt: EditText
+    private lateinit var loginBtn: Button
     private lateinit var signUpBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        setContentView(R.layout.activity_login)
+        supportActionBar?.hide()
 
-        // get activity element
-        nameEdt = findViewById(R.id.nameEdt)
+        // get view element
         emailEdt = findViewById(R.id.emailEdt)
         passwordEdt = findViewById(R.id.passwordEdt)
+        loginBtn = findViewById(R.id.loginButton)
         signUpBtn = findViewById(R.id.signupButton)
 
+        // redirect to the sign up page on click
         signUpBtn.setOnClickListener {
-            val name = nameEdt.text.toString()
+            val intent = Intent(this, SignUpView::class.java)
+            startActivity(intent)
+        }
+
+        // connect on click
+        loginBtn.setOnClickListener {
             val email = emailEdt.text.toString()
             val password = passwordEdt.text.toString()
-            val signUpViewModel = SignUpViewModel()
+            val loginViewModel = LoginViewModel()
 
-            signUpViewModel.signUp(name, email, password, this)
+            loginViewModel.getConnection(email, password, this)
         }
     }
 

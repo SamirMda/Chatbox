@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatbox">
         <activity
-            android:name=".view.ChatActivity"
+            android:name=".view.ChatActivityView"
             android:exported="false" />
         <activity
-            android:name=".view.SignUp"
+            android:name=".view.SignUpView"
             android:exported="false" />
         <activity
-            android:name=".view.Login"
+            android:name=".view.LoginView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,7 +11,6 @@ import com.example.chatbox.R
 import com.example.chatbox.database.User
 import com.example.chatbox.viewModel.MainViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var userRecyclerView: RecyclerView
@@ -47,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.logout) {
             mAuth.signOut()
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, LoginView::class.java)
             finish()
             startActivity(intent)
             return true
