@@ -35,6 +35,7 @@ class SignUpView : AppCompatActivity() {
             val password = passwordEdt.text.toString()
             val signUpViewModel = SignUpViewModel()
 
+
             signUpViewModel.signUp(name, email, password, this)
         }
     }

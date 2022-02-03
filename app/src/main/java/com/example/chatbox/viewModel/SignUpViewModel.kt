@@ -32,4 +32,31 @@ class SignUpViewModel {
             }
     }
 
+    /**
+     *     Password rules
+     * must contain at least :
+     *  - 5 characters
+     *  - 1 minuscule
+     *  - 1 majuscule
+     *  - 1 number
+     *  - 1 special character (@+.-_?!$€)
+     *
+     * Input : password(String)
+     * Output : result(Boolean)
+     **/
+    infix fun checkPassword(password: String) : Boolean {
+        val length = password.length
+        val min = Regex(".*[a-z]+.*")
+        val maj = Regex(".*[A-Z]+.*")
+        val num = Regex(".*[0-9]+.*")
+        val specChar = Regex(".*[@+\\.\\-_\\?\\!\\$€]+.*")
+
+        if ((length >= 5) && (min.matches(password)) && (maj.matches(password)) &&
+                (num.matches(password)) && (specChar.matches(password))) {
+            return true
+        }
+
+        return false
+    }
+
 }
