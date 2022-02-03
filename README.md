@@ -7,6 +7,7 @@ This project is an Android chatbox
 
 1. Firebase
 2. MVVM
+3. JUnit
 
 
 ## Guide
