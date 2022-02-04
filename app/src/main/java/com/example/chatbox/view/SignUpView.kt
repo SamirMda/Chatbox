@@ -35,8 +35,15 @@ class SignUpView : AppCompatActivity() {
             val password = passwordEdt.text.toString()
             val signUpViewModel = SignUpViewModel()
 
-
-            signUpViewModel.signUp(name, email, password, this)
+            // Pwd and email verification before registration
+            if (!signUpViewModel.checkPassword(password)) {
+                Toast.makeText(this, "Erreur sur la création du mot de passe", Toast.LENGTH_LONG).show()
+            }  else if(!signUpViewModel.checkEmail(email)) {
+                Toast.makeText(this, "Erreur sur la saisie de l'adresse mail", Toast.LENGTH_LONG)
+                    .show()
+            }else {
+                signUpViewModel.signUp(name, email, password, this)
+            }
         }
     }
 

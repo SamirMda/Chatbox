@@ -32,6 +32,7 @@ class SignUpViewModel {
             }
     }
 
+
     /**
      *     Password rules
      * must contain at least :
@@ -44,7 +45,7 @@ class SignUpViewModel {
      * Input : password(String)
      * Output : result(Boolean)
      **/
-    infix fun checkPassword(password: String) : Boolean {
+     fun checkPassword(password: String) : Boolean {
         val length = password.length
         val min = Regex(".*[a-z]+.*")
         val maj = Regex(".*[A-Z]+.*")
@@ -55,6 +56,14 @@ class SignUpViewModel {
                 (num.matches(password)) && (specChar.matches(password))) {
             return true
         }
+
+        return false
+    }
+
+    fun checkEmail(email: String): Boolean {
+        val rules = Regex(".+@.+\\..+")
+
+        if (rules.matches(email)) return true
 
         return false
     }
