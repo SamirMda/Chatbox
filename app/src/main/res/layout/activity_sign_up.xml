@@ -32,30 +32,63 @@
         android:layout_height="50dp"
         android:layout_below="@id/nameEdt"
         android:layout_marginTop="10dp"
-        android:hint="Email"
+        android:hint="Courriel"
         android:paddingLeft="13dp"
         android:background="@drawable/edt_background"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/errorEmailTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailEdt"
+        android:layout_marginTop="10dp"
+        android:text="Veuillez entrer une adresse valide"
+        android:textColor="@color/red"
+        android:textSize="15sp"
+        android:paddingLeft="13dp"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
     <EditText
         android:id="@+id/passwordEdt"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/emailEdt"
+        android:layout_below="@id/errorEmailTV"
         android:layout_marginTop="10dp"
         android:inputType="textPassword"
-        android:hint="Password"
+        android:hint="Mot de Passe"
         android:paddingLeft="13dp"
         android:background="@drawable/edt_background"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp" />
 
+    <TextView
+        android:id="@+id/errorPasswordTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEdt"
+        android:layout_marginTop="10dp"
+        android:text="Le mot de passe doit contenir au minimum :\n
+       - 5 caractères \n
+       - 1 minuscule \n
+       - 1 majuscule \n
+       - 1 chiffre \n
+       - 1 caractère special  (@+.-_?!$€)"
+        android:textColor="@color/red"
+        android:textSize="15sp"
+        android:paddingLeft="13dp"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
     <Button
         android:id="@+id/signupButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordEdt"
+        android:layout_below="@id/errorPasswordTV"
         android:text="S'inscrire"
         android:inputType="text"
         android:background="@drawable/btn_backroupe"

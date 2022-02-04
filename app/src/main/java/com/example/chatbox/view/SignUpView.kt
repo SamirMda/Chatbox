@@ -3,8 +3,10 @@ package com.example.chatbox.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.chatbox.R
 import com.example.chatbox.database.User
@@ -37,8 +39,30 @@ class SignUpView : AppCompatActivity() {
 
             // Pwd and email verification before registration
             if (!signUpViewModel.checkPassword(password)) {
+                // Remove password error message if it's visible
+                val errorEmailTV = findViewById<TextView>(R.id.errorEmailTV)
+
+                if (errorEmailTV.visibility == View.VISIBLE) {
+                    errorEmailTV.visibility = View.GONE
+                }
+
+                // Display error message
+                val errorPasswordTV = findViewById<TextView>(R.id.errorPasswordTV)
+                errorPasswordTV.visibility = View.VISIBLE
+
                 Toast.makeText(this, "Erreur sur la création du mot de passe", Toast.LENGTH_LONG).show()
             }  else if(!signUpViewModel.checkEmail(email)) {
+                // Remove password error message if it's visible
+                val errorPasswordTV = findViewById<TextView>(R.id.errorPasswordTV)
+
+                if (errorPasswordTV.visibility == View.VISIBLE) {
+                    errorPasswordTV.visibility = View.GONE
+                }
+
+                // Display error message
+                val errorEmailTV = findViewById<TextView>(R.id.errorEmailTV)
+                errorEmailTV.visibility = View.VISIBLE
+
                 Toast.makeText(this, "Erreur sur la saisie de l'adresse mail", Toast.LENGTH_LONG)
                     .show()
             }else {
